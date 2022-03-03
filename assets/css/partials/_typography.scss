@@ -1,0 +1,42 @@
+@mixin typeface-1($device, $size: h1) {
+    font-family: 'Fraunces', sans-serif;
+    @if($device==mobile and $size==h1) {
+        font-size: 2.5rem; // 40 px
+        font-weight: 900;
+        line-height: 1.2;
+        word-spacing: 20px;
+    }
+    @else if($device==mobile and $size==h2) {
+        font-size: 2rem; // 32 px
+        font-weight: 700;
+        line-height: 1.2;
+    }
+    @else if($device==mobile and $size==h3) {
+        font-size: 1.75rem; // 28 px
+        font-weight: 700;
+        line-height: 1.25;
+    }
+    @else if($device==mobile and $size==h4) {
+        font-size: 1.125rem; // 18 px
+        font-weight: 900;
+        line-height: 1.5;
+    }
+    @else if($device==mobile and $size==h5) {
+        font-size: 0.9375rem; // 15 px
+        font-weight: 700;
+        line-height: 1.8;
+    }
+}
+
+@mixin typeface-2($device, $size: p1) {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 600;
+    @if($device==mobile and $size==p1) {
+        font-size: 1.125rem; // 18 px
+        line-height: 1.3;
+    }
+    @if($device==mobile and $size==p2) {
+        font-size: 1rem; // 16 px
+        line-height: 1.5;
+    }
+}

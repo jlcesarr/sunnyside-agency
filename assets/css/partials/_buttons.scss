@@ -1,0 +1,18 @@
+.cta-link {
+    @include typeface-1(mobile, h5);
+    color: $very-dark-satured-blue;
+    text-transform: uppercase;
+    position: relative;
+    max-width: max-content;
+    align-self: center;
+    &::after {
+        content: '';
+        position: absolute;
+        width: 110%;
+        height: 10px;
+        opacity: 0.4;
+        border-radius: 28px;
+        bottom: -2px;
+        left: -5px;
+    }
+}
