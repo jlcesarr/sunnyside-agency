@@ -10,6 +10,9 @@ let isMobileMenuOpen = false;
 mobileMenu.toggleButton.addEventListener('click', () => {
     isMobileMenuOpen = !isMobileMenuOpen;
 
+    console.log(1)
+
+
     mobileMenu.menu.classList.toggle('is-active', isMobileMenuOpen);
 })
 
@@ -17,10 +20,9 @@ mobileMenu.toggleButton.addEventListener('click', () => {
 // TOGGLE MENU ITEM
 
 const removeAllActiveLinks = () => mobileMenu.menuItems.forEach((item) => item.classList.remove('is-active'));
-
-
 mobileMenu.menu.addEventListener('click', (event) => {
     const { target: element } = event;
+
 
     if (element.classList.contains('dropdown-link')) {
         removeAllActiveLinks();
