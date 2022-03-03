@@ -18,34 +18,37 @@
     <div class="grid-wrapper">
 
         <!-- HEADER -->
-        <header class="header">
+        <header id="header" class="header">
             <div class="header-container">
                 <figure class="header-logo">
                     <img src="assets/images/logo.svg" alt="Sunnyside Logo">
                 </figure>
 
+                <!-- MOBILE MENU -->
+                <div class="header-menu">
+                    <!-- MENU BUTTON -->
+                    <img class="bx" id="bx" src="assets/images/icon-hamburger.svg" alt="Hamburguer Menu Icon"></img>
 
-                <!-- MENU BUTTON -->
-                <img class="bx" id="bx" src="assets/images/icon-hamburger.svg" alt="Hamburguer Menu Icon"></img>
-                <!-- DROPDOWN MENU
-                <nav class="dropdown-menu">
-                    <ul class="dropdown-menu-list">
-                        <li class="dropdown-item">
-                            <a href="#" class="dropdown-link">
+                    <!-- DROPDOWN MENU -->
+                    <nav class="dropdown-menu">
+                        <ul class="dropdown-menu-list">
+                            <li class="dropdown-item">
+                                <a href="#" class="dropdown-link">
                                 About
                             </a>
-                        </li>
-                        <li class="dropdown-item">
-                            <a href="#" class="dropdown-link">Services</a>
-                        </li>
-                        <li class="dropdown-item">
-                            <a href="#" class="dropdown-link">Projects</a>
-                        </li>
-                        <li class="dropdown-item">
-                            <a href="#" class="dropdown-link">Contact</a>
-                        </li>
-                    </ul>
-                </nav> -->
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="#" class="dropdown-link">Services</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="#" class="dropdown-link">Projects</a>
+                            </li>
+                            <li class="dropdown-item is-active">
+                                <a href="#" class="dropdown-link">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
                 <h1 class="header-heading">We are Creatives</h1>
 
                 <img class="arrow-icon" src="assets/images/icon-arrow-down.svg" alt="Arrow Icon">
@@ -189,6 +192,7 @@
             </div>
         </footer>
     </div>
+    <script src="assets/js/app.js"></script>
 </body>
 
 </html>

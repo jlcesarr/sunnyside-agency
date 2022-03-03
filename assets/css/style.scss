@@ -34,5 +34,6 @@ body {
     width: 100%;
     background-color: $white;
     font-size: $body-font-size;
+    scroll-behavior: smooth;
     @include typeface-2(mobile, p2);
 }

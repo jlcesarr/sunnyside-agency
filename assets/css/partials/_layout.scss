@@ -22,18 +22,22 @@ $wrapper-class: 'grid-wrapper';
     align-items: center;
     background-image: url('../images/mobile/image-header.jpg');
     background-size: cover;
-    background-attachment: fixed;
+    // background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center center;
     .header-logo {
         height: 24px;
         grid-area: logo;
     }
-    .bx {
-        width: 24px !important;
-        height: 18px;
+    .header-menu {
         justify-self: end;
+        // width: max-content;
         grid-area: menu;
+        .bx {
+            width: 24px !important;
+            cursor: pointer;
+            height: 18px;
+        }
     }
     .header-heading {
         @include typeface-1(mobile);
@@ -51,6 +55,62 @@ $wrapper-class: 'grid-wrapper';
     }
 }
 
+// DROPDOWN MENU LIST
+.dropdown-menu {
+    position: absolute;
+    top: 90px;
+    right: 25px;
+    width: 75vw;
+    min-height: 400px;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 999;
+    transition: .8s ease;
+    &.is-active {
+        opacity: 1;
+        pointer-events: all;
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        top: -5.5%;
+        right: 0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 0 24px 24px;
+        border-color: transparent transparent $white transparent;
+    }
+    background-color: $white;
+    .dropdown-menu-list {
+        display: grid;
+        grid-auto-flow: row;
+        justify-items: center;
+        gap: 32px;
+        padding: 48px 0;
+        .dropdown-item {
+            padding: 0 20px;
+            // border: 1px solid red;
+            &.is-active {
+                background-color: $yellow;
+                border-radius: 28px;
+                .dropdown-link {
+                    color: $very-dark-satured-blue;
+                    @include typeface-1(mobile,
+                    h5);
+                    text-transform: uppercase;
+                }
+            }
+        }
+        .dropdown-item .dropdown-link {
+            color: $grayish-blue;
+            padding: 10px;
+            @include typeface-2(mobile,
+            p1);
+        }
+    }
+}
+
 .container {
     // max-width: 1440px;
     margin: 0 auto;
@@ -65,7 +125,7 @@ $wrapper-class: 'grid-wrapper';
     flex-direction: column;
     text-align: center;
     justify-content: center;
-    gap: $gutter-module;
+    // gap: $gutter-module;
     margin: 0 auto;
     max-width: 80%;
     padding: $padding-module;
@@ -82,6 +142,7 @@ $wrapper-class: 'grid-wrapper';
             @include typeface-2(mobile,
             p2);
             color: $very-grayish-blue;
+            margin: 24px 0;
         }
         .transform-cta {
             &::after {
@@ -97,6 +158,9 @@ $wrapper-class: 'grid-wrapper';
         .standout-heading {
             @include typeface-1(mobile,
             h2);
+        }
+        .standout-description {
+            margin: 24px 0;
         }
         .standout-cta {
             &::after {
@@ -122,6 +186,7 @@ article.graphic-design {
             color: $dark-satured-cyan;
         }
         .graphic-description {
+            margin-top: 24px;
             @include typeface-2(mobile,
             p2);
             color: $dark-satured-cyan;
@@ -148,6 +213,7 @@ article.photography {
             @include typeface-2(mobile,
             p2);
             color: $dark-blue;
+            margin-top: 24px;
         }
     }
 }
@@ -167,9 +233,8 @@ article.photography {
     .testimonials-list {
         display: flex;
         flex-direction: column;
-        gap: 72px;
         .testimonials-item {
-            gap: 16px;
+            margin-bottom: 72px;
             padding: 0 32px;
             display: flex;
             flex-direction: column;
@@ -186,6 +251,7 @@ article.photography {
                 p1);
                 line-height: 32px;
                 letter-spacing: -0.13px;
+                margin: 16px 0;
             }
             .testimonial-name {
                 color: $very-dark-satured-blue;
@@ -197,6 +263,7 @@ article.photography {
                 @include typeface-2(mobile,
                 p2);
                 color: $grayish-blue;
+                margin-top: 16px;
             }
         }
     }
@@ -226,8 +293,11 @@ article.photography {
             display: grid;
             grid-auto-flow: column;
             grid-auto-columns: 1fr;
-            gap: 48px;
+            // gap: 48px;
             margin: 56px 0 90px 0;
+            .footer-menu-item {
+                margin: 0 24px;
+            }
             .footer-menu-item a {
                 color: $dark-moderate-cyan;
                 padding: 10px;
@@ -236,7 +306,9 @@ article.photography {
         .social-networks-list {
             display: grid;
             grid-auto-flow: column;
-            gap: 24px;
+            .social-network-item {
+                margin: 0 12px;
+            }
         }
     }
 }
