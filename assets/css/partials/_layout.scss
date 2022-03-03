@@ -17,13 +17,11 @@ $container-bk: 975px;
     width: 100%;
     margin: 0 auto;
     display: grid;
-    // grid-template-columns: 100%;
-    // grid-template-rows: 100vh;
-    // grid-template-rows: 100vh;
+    overflow: hidden;
     grid-auto-rows: auto;
-    grid-template: 'header' 100vh 'transform-section' 'standout-section' 'graphic-article' 'photography-article' 'testimonials-section' 'gallery-section' 'footer' / 100%;
+    grid-template: 'header' 100vh 'transform-section' 'standout-section' 'articles' 'testimonials-section' 'gallery-section' 'footer' / 100%;
     @include responsive(l) {
-        grid-template: 'header header' 100vh 'transform-section transform-section' 'standout-section standout-section' 'graphic-article photography-article' 700px 'testimonials-section testimonials-section' 'gallery-section gallery-section' 'footer footer' / 1fr 1fr;
+        grid-template: 'header header' 100vh 'transform-section transform-section' 'standout-section standout-section' 'articles articles' 1fr 'testimonials-section testimonials-section' 'gallery-section gallery-section' 'footer footer' / 1fr 1fr;
     }
 }
 
@@ -277,13 +275,22 @@ $container-bk: 975px;
     }
 }
 
+.articles-wrapper {
+    display: grid;
+    overflow: hidden;
+    grid-area: articles;
+    @include responsive(l) {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
 // GRAPHIC DESIGN CONTAINER
-.graphic-design {
-    grid-area: graphic-article;
+article.graphic-design {
     position: relative;
     height: 100%;
     .graphic-image {
-        height: 100%;
+        max-height: 600px;
+        width: 101%;
     }
     .graphic-content {
         position: absolute;
@@ -306,10 +313,10 @@ $container-bk: 975px;
 
 // PHOTOGRAPHY ARTICLE
 article.photography {
-    grid-area: photography-article;
     position: relative;
     .photography-image {
-        height: 100%;
+        max-height: 600px;
+        width: 100%;
     }
     .photography-content {
         width: 100% !important;

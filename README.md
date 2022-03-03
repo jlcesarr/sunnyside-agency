@@ -1,3 +1,0 @@
-- [] aplicar elemento pictures para alternar entre as imagens desktop e mobile
-- [] modificar tamanhos das fontes atraves dos media query
-- [] otimizar imagens com tinyimg ou converter para webp
