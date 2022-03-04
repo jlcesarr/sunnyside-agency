@@ -198,6 +198,7 @@ $container-bk: 975px;
 
 // TRANSFORM CONTAINER
 .transform {
+    overflow: hidden;
     grid-area: transform-section;
     .transform-content {
         .transform-heading {
@@ -290,7 +291,7 @@ article.graphic-design {
     height: 100%;
     .graphic-image {
         max-height: 600px;
-        width: 101%;
+        width: 100%;
     }
     .graphic-content {
         position: absolute;
@@ -307,6 +308,7 @@ article.graphic-design {
             margin-top: 24px;
             @include typeface-2(mobile, p2);
             color: $dark-satured-cyan;
+            // margin: 0 auto;
         }
     }
 }
